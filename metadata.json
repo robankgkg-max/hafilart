@@ -1,0 +1,6 @@
+{
+  "name": "HAFIL.M — Visual Journal",
+  "description": "Editorial monograph portfolio for Hafil.M, featuring Section 02 (Biographical Record) and Section 04 (Wedding Archive — Interactive Editorial Series Gallery).",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

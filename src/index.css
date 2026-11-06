@@ -1,0 +1,160 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Bodoni Moda", "Didot", "Bodoni MT", serif;
+  --font-display: "Bodoni Moda", "Didot", "Bodoni MT", serif;
+  --font-editorial: "Cormorant Garamond", "Garamond", "Georgia", serif;
+  --font-sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-script: "Alex Brush", cursive;
+  --font-luxury-script: "Pinyon Script", "Allura", "Alex Brush", cursive;
+  --font-handwriting: "Homemade Apple", "Caveat", cursive;
+  --color-paper: #F4EDE1;
+  --color-ink: #111111;
+  --color-charcoal: #4A4741;
+}
+
+/* ============================================================ */
+/* EDITORIAL HEADINGS: REINFORCED TEXT STROKE & OPTICAL WEIGHT  */
+/* Ensures high-contrast serif characters (A, N, M, H, W) have  */
+/* solid, clearly legible thin hairlines across all viewports   */
+/* ============================================================ */
+.font-serif,
+.font-display {
+  font-family: var(--font-serif);
+  font-optical-sizing: none;
+  font-variation-settings: "opsz" 12, "wght" 480;
+  -webkit-text-stroke: 0.35px currentColor;
+  paint-order: stroke fill;
+  text-rendering: optimizeLegibility;
+}
+
+/* Primary editorial display headings (H1, H2, H3, titles) */
+h1.font-serif,
+h2.font-serif,
+h3.font-serif,
+.editorial-heading-stroke {
+  font-optical-sizing: none;
+  font-variation-settings: "opsz" 10, "wght" 500;
+  -webkit-text-stroke: 0.45px currentColor;
+  paint-order: stroke fill;
+  text-rendering: optimizeLegibility;
+}
+
+/* Prominent section titles (e.g. FASHION ARCHIVE, WEDDING ARCHIVE) */
+.archive-headline {
+  font-optical-sizing: none;
+  font-variation-settings: "opsz" 9, "wght" 520;
+  -webkit-text-stroke: 0.55px currentColor;
+  paint-order: stroke fill;
+  text-rendering: optimizeLegibility;
+}
+
+.font-script {
+  font-family: var(--font-script), cursive;
+}
+
+.font-luxury-script {
+  font-family: var(--font-luxury-script), cursive;
+}
+
+.font-handwriting {
+  font-family: var(--font-handwriting), cursive;
+}
+
+/* Washi / Masking Tape Aesthetic Strip */
+.washi-tape {
+  background: rgba(235, 230, 218, 0.72);
+  backdrop-filter: blur(1px);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+  border-left: 1px dashed rgba(17, 17, 17, 0.15);
+  border-right: 1px dashed rgba(17, 17, 17, 0.15);
+}
+
+/* Polar photographic paper card shadow */
+.photo-card-shadow {
+  box-shadow: 0 12px 32px -8px rgba(17, 17, 17, 0.14), 0 4px 12px -2px rgba(17, 17, 17, 0.06);
+}
+
+.photo-tape-shadow {
+  box-shadow: 0 8px 24px -6px rgba(17, 17, 17, 0.12);
+}
+
+/* Warm muted editorial image tone */
+.photo-editorial-warm {
+  filter: contrast(106%) saturate(92%) brightness(98%);
+}
+
+@layer base {
+  html {
+    background-color: #d45a1e;
+    color: #111111;
+    font-family: var(--font-sans);
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: #d45a1e;
+  }
+}
+
+/* Subtle editorial film grain overlay */
+.film-grain {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.035'/%3E%3C/svg%3E");
+}
+
+/* Photographic contact paper print tone */
+.photo-monochrome {
+  filter: grayscale(100%) contrast(114%) brightness(96%);
+}
+
+.photo-warm-monochrome {
+  filter: grayscale(100%) sepia(8%) contrast(112%) brightness(97%);
+}
+
+/* Ultra-thin hairline editorial rules */
+.editorial-rule {
+  height: 1px;
+  background-color: rgba(17, 17, 17, 0.16);
+}
+
+.editorial-rule-vertical {
+  width: 1px;
+  background-color: rgba(17, 17, 17, 0.16);
+}
+
+/* Precision architectural registration mark */
+.registration-cross {
+  position: relative;
+}
+.registration-cross::before,
+.registration-cross::after {
+  content: '';
+  position: absolute;
+  background-color: rgba(17, 17, 17, 0.4);
+}
+.registration-cross::before {
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  transform: translateY(-50%);
+}
+.registration-cross::after {
+  top: 0;
+  left: 50%;
+  width: 1px;
+  height: 100%;
+  transform: translateX(-50%);
+}
+
+/* Optimized background artwork using WebP intro images */
+.bg-cover-desktop {
+  background-image: url('https://res.cloudinary.com/cbi5mcab/image/upload/v1793769289/Winking_Photographer_in_Gradient_Studio_npbxby.webp');
+}
+
+.bg-cover-tablet {
+  background-image: url('https://res.cloudinary.com/cbi5mcab/image/upload/v1793769289/Hafil_M_Photographer_Hero_Poster_jayaln.webp');
+}
+
+.bg-cover-mobile {
+  background-image: url('https://res.cloudinary.com/cbi5mcab/image/upload/v1793769289/Winking_Photographer_in_Charcoal_Suit_kgew1u.webp');
+}
